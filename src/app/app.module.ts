@@ -7,13 +7,11 @@ import { Keyboard } from '@ionic-native/keyboard';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { AccountsPage } from '../pages/accounts/accounts';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    AccountsPage
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -22,8 +20,7 @@ import { AccountsPage } from '../pages/accounts/accounts';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    AccountsPage
+    HomePage
   ],
   providers: [
     Keyboard,
