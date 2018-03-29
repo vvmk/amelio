@@ -8,6 +8,6 @@ import { UserMetaPrefsPage } from './user-meta-prefs';
   ],
   imports: [
     IonicPageModule.forChild(UserMetaPrefsPage),
-  ],
+  ]
 })
 export class UserMetaPrefsPageModule {}
