@@ -11,12 +11,19 @@ export class AccountsPage {
 
   }
 
-  addAccount(): Boolean {
-    return true;
+  addAccount() {
   }
 
   changeTileUponSuccessfulVerification() {
 
+  }
+
+  redirect(url: String) {
+
+  }
+
+  checkIfAuthenticated(): Boolean {
+    return true;
   }
 
 
