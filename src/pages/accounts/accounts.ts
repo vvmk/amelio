@@ -11,4 +11,14 @@ export class AccountsPage {
 
   }
 
+  addAccount(): Boolean {
+    return true;
+  }
+
+  changeTileUponSuccessfulVerification() {
+
+  }
+
+
+
 }
