@@ -19,7 +19,7 @@ export class HomePage {
 
 	showAccountsPage() {
 		// important that the target page name be inside quotes
-		// this.navCtrl.push('AccountPageClassName');
+    this.navCtrl.push('accounts');
 		console.log("navigate to accounts page");
-	}	
+	}
 }
