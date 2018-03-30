@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { UserServiceProvider } from '../providers/user-service/user-service';
 
 // TODO: pull this into firebaseconfig.json
 export const firebaseConfig = {
@@ -43,7 +44,8 @@ export const firebaseConfig = {
     Keyboard,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserServiceProvider
   ]
 })
 export class AppModule {}
