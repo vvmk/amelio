@@ -20,4 +20,8 @@ export class HomePage {
 	showAccountsPage() {
     	this.navCtrl.push('AccountsPage');
 	}
+
+	showLoginPage() {
+		this.navCtrl.push('LoginPage');
+	}
 }
