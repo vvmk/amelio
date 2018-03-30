@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the LoginPage page.
@@ -15,12 +15,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 	method: string = "login";
+	reg = {
+		email: '',
+		password: '',
+		confirm: ''
+	}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertController: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
+  displayAlert(alertTitle, alertSub) {
+  	let alert = this.alertController.create({
+  		title: alertTitle,
+  		subTitle: alertSub,
+  		buttons: ['OK']
+  	});
+  	alert.present();
+  }
+
+  submitLogin() {
+  	this.displayAlert("ALERT TITLE", "subtitle");
+  }
 }
