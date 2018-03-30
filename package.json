@@ -30,6 +30,7 @@
     "cordova-plugin-keyboard": "^1.2.0",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.1",
+    "cordova-sqlite-storage": "^2.3.0",
     "font-awesome": "^4.7.0",
     "global": "^4.3.2",
     "ionic": "^3.20.0",
@@ -51,7 +52,8 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-keyboard": {},
-      "ionic-plugin-keyboard": {}
+      "ionic-plugin-keyboard": {},
+      "cordova-sqlite-storage": {}
     }
   }
 }
