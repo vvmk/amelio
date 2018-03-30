@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import * as firebase from 'firebase/app';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import { UserServiceProvider } from '../../providers/user-service/user-service';
 
@@ -27,8 +27,8 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
 
  	constructor(public navCtrl: NavController,
  		public navParams: NavParams,
- 		public userService: UserServiceProvider) {
-
+ 		private userService: UserServiceProvider,
+ 		private afAuth: AngularFireAuth) {
 
  	}
 
@@ -39,8 +39,18 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
  	submitLogin() {
  		if (!this.login.email || !this.login.password) {
  			this.userService.displayAlert("Empty Field", "Please fill out all the fields.");
+ 			return;
  		}
- 		console.log(this.login);
+
+ 		this.userService.logOn(this.login.email, this.login.password)
+ 		.then(response => {
+ 			if (this.userService.success) {
+ 				this.navCtrl.pop();
+ 			} else {
+ 				this.login.email = '';
+ 				this.login.password = '';
+ 			}
+ 		});
  	}
 
  	submitCreateAccount() {
@@ -49,7 +59,18 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
  			this.register.password = '';
  			this.register.confirm = '';
  		} else { // all is well
- 			console.log("fields good, creating user");
+ 			this.registerAccount();
  		}
+ 	}
+
+ 	registerAccount() {
+ 		this.afAuth.auth.createUserWithEmailAndPassword(this.register.email, this.register.password)
+ 		.then(res => this.regSuccess(res))
+ 		.catch(err => this.userService.displayAlert('Error!', err));
+ 	}
+
+ 	regSuccess(response) {
+ 		this.userService.logOn(this.register.email, this.register.password)
+ 		.then(res => this.navCtrl.pop());
  	}
  }
