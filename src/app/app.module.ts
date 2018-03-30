@@ -14,11 +14,11 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 // TODO: pull this into firebaseconfig.json
 export const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  storageBucket: "",
-  messagingSenderId: ""
+  apiKey: "AIzaSyAXNuBEo3DHY97O1grpriuDERNZ_7YYZZg",
+  authDomain: "com-ca-amelio.firebaseapp.com",
+  databaseURL: "https://com-ca-amelio.firebaseio.com",
+  storageBucket: "com-ca-amelio.appspot.com",
+  messagingSenderId: "900924341724"
 };
 
 @NgModule({
