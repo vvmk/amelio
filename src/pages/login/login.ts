@@ -12,7 +12,7 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
  })
  export class LoginPage {
  	method: string = "login";
- 	name: string = "Vincent Masiello";
+ 	name: string = "TEST PASS";
 
  	login = {
  		email: '',

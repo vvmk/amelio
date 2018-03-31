@@ -10,7 +10,7 @@ import { AccountModel } from '../../models/account-model';
 })
 
 export class HomePage {
-	user: UserModel = new UserModel('','');
+	user: UserModel = new UserModel('error on platform.ready','error on platform.ready');
 
 	constructor(public navCtrl: NavController,
 		public events: Events,
@@ -19,9 +19,9 @@ export class HomePage {
 		platform.ready().then(() => {
 			//TODO: get cached user data
 			this.updateUserData({
-				name: "Marshall Banana",
-				email: "noodleking@electricnoodlesquad.com"
-			});
+				name: "[logged in user name]",
+				email: "[logged in user email]"
+			})
 		});
 
 		events.subscribe('user:loggedin', 
