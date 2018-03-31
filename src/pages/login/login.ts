@@ -12,6 +12,7 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
  })
  export class LoginPage {
  	method: string = "login";
+ 	name: string = "Vincent Masiello";
 
  	login = {
  		email: '',
@@ -19,6 +20,7 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
  	};
 
  	register = {
+ 		name: '',
  		email: '',
  		password: '',
  		confirm: ''
@@ -83,7 +85,11 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
  		this.register.confirm = '';
  		this.login.password = '';
 
- 		this.events.publish('user:loggedin', email);
+ 		let eventData = {
+ 			email: email,
+ 			name: this.name
+ 		}
+ 		this.events.publish('user:loggedin', eventData);
  		this.navCtrl.pop()
  	}
  }
