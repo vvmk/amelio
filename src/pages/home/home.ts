@@ -18,10 +18,14 @@ export class HomePage {
 		
 		platform.ready().then(() => {
 			//TODO: get cached user data
+
+			// test object 
 			this.updateUserData({
-				name: "[logged in user name]",
-				email: "[logged in user email]"
+				name: "Vincent Masiello",
+				email: "vincentmasiello@gmail.com"
 			})
+			this.user.addCompany("Zip Code Wilmington");
+			this.user.addCompany("Apollic Software, LLC");
 		});
 
 		events.subscribe('user:loggedin', 

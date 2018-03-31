@@ -2,6 +2,7 @@ import { AccountModel } from './account-model';
 
 export class UserModel {
 
+	avatar: string = 'assets/imgs/anon.png';
 	companies: string[] = [];
 	userObserver: any;
 	accounts: AccountModel[] = [];

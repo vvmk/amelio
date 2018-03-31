@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class UserInfoCardComponent {
 
-	@Input('userName') userData; 
+	@Input('userData') userData; 
 
 	constructor() {
 	}
