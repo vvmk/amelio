@@ -16,12 +16,16 @@
 
 <ion-content>
 
-  <user-info-card [userData]="user"></user-info-card>
+  <user-info-card [userData]="user">
+    <button class="share-button" color="secondary" ion-button small clear icon-only
+    (click)="openShareModal()">
+      <ion-icon name="share"></ion-icon>
+    </button>
 
-	<ion-fab right top>
-		<button ion-fab mini color="light"
-		(click)="showLoginPage()">
-		<ion-icon name="cog"></ion-icon>
-		</button>
-	</ion-fab>
+    <button class="pref-button" color="secondary" ion-button small clear icon-only
+    (click)="showLoginPage()">
+      <ion-icon name="cog"></ion-icon>
+    </button>
+  </user-info-card>
+
 </ion-content>
