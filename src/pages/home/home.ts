@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, Events } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -7,9 +7,16 @@ import { IonicPage, NavController } from 'ionic-angular';
 	templateUrl: 'home.html'
 })
 export class HomePage {
+	user = {
+		name: '',
+		email: '',
+		companies: []
+	}
 
-	constructor(public navCtrl: NavController) {
-
+	constructor(public navCtrl: NavController, public events: Events) {
+		events.subscribe('user:loggedin', userLoginEventData => {
+			this.user.email = userLoginEventData[0];
+		});
 	}
 
 	openShareModal() {
@@ -18,7 +25,7 @@ export class HomePage {
 	}
 
 	showAccountsPage() {
-    	this.navCtrl.push('AccountsPage');
+		this.navCtrl.push('AccountsPage');
 	}
 
 	showLoginPage() {

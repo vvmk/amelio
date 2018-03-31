@@ -15,6 +15,9 @@
 </ion-header>
 
 <ion-content>
+
+  <user-info-card [userName]="user.fullname"></user-info-card>
+
 	<ion-fab right top>
 		<button ion-fab mini color="light"
 		(click)="showLoginPage()">

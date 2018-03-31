@@ -12,6 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { UserServiceProvider } from '../providers/user-service/user-service';
+import { UserInfoCardComponent } from '../components/user-info-card/user-info-card';
 
 // TODO: pull this into firebaseconfig.json
 export const firebaseConfig = {
@@ -25,7 +26,8 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    UserInfoCardComponent
   ],
   imports: [
     BrowserModule,
