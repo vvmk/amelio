@@ -32,6 +32,14 @@ export class HomePage {
 			userLoginEventData => this.updateUserData(userLoginEventData));
 	}
 
+	showMore(): void {
+		if (this.user.email == '') {
+			this.showAccountsPage();
+		} else {
+			// show popover
+		}
+	}
+
 	openShareModal(): void {
 		// open the modal with the share link
 		console.log("share modal");
