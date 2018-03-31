@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, Events } from 'ionic-angular';
+import { IonicPage, NavController, Events, Platform } from 'ionic-angular';
 import { UserModel } from '../../models/user-model';
 import { AccountModel } from '../../models/account-model';
 
@@ -10,10 +10,20 @@ import { AccountModel } from '../../models/account-model';
 })
 
 export class HomePage {
-	user: UserModel;
+	user: UserModel = new UserModel('','');
 
-	constructor(public navCtrl: NavController, public events: Events) {
-		//TODO: Observe changes to this.user, 
+	constructor(public navCtrl: NavController,
+		public events: Events,
+		public platform: Platform) {
+		
+		platform.ready().then(() => {
+			//TODO: get cached user data
+			this.updateUserData({
+				name: "Marshall Banana",
+				email: "noodleking@electricnoodlesquad.com"
+			});
+		});
+
 		events.subscribe('user:loggedin', 
 			userLoginEventData => this.updateUserData(userLoginEventData));
 	}

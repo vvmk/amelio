@@ -2,9 +2,9 @@ import { AccountModel } from './account-model';
 
 export class UserModel {
 
-	companies: string[];
+	companies: string[] = [];
 	userObserver: any;
-	accounts: AccountModel[];
+	accounts: AccountModel[] = [];
 
 	constructor(public name: string, public email: string) {
 

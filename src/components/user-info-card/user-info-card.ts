@@ -6,18 +6,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class UserInfoCardComponent {
 
-	@Input('userName') userName; 
-
-	text: string;
-	
+	@Input('userName') userData; 
 
 	constructor() {
-		console.log('Hello UserInfoCardComponent Component');
-		this.text = 'Hello World';
 	}
 
 	ngAfterViewInit() {
-		this.text = this.userName;
+		console.log('view did init');
 	}
-
 }
