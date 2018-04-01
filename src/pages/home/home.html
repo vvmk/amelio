@@ -16,4 +16,11 @@
 
 <ion-content>
   <user-info-card [userData]="user"></user-info-card>
+
+  <!-- Temporary FABs to provide dev access to other pages -->
+  <ion-fab bottom right>
+    <button ion-button icon-only color="royal" (click)="showLoginPage()">
+      <ion-icon name="person"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>
