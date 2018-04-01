@@ -20,7 +20,7 @@ export class HomePage {
 		platform.ready().then(() => {
 			//TODO: get cached user data
 
-			// test object 
+			// demo data 
 			this.updateUserData({
 				name: "Vincent Masiello",
 				email: "vincentmasiello@gmail.com"
