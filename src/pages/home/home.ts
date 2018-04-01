@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, Events, Platform } from 'ionic-angular';
+import { IonicPage, NavController, PopoverController, Events, Platform } from 'ionic-angular';
 import { UserModel } from '../../models/user-model';
 import { AccountModel } from '../../models/account-model';
 
@@ -13,6 +13,7 @@ export class HomePage {
 	user: UserModel = new UserModel('error on platform.ready','error on platform.ready');
 
 	constructor(public navCtrl: NavController,
+		public popoverCtrl: PopoverController,
 		public events: Events,
 		public platform: Platform) {
 		
@@ -32,11 +33,14 @@ export class HomePage {
 			userLoginEventData => this.updateUserData(userLoginEventData));
 	}
 
-	showMore(): void {
+	showMore(event): void {
 		if (this.user.email == '') {
 			this.showAccountsPage();
 		} else {
-			// show popover
+			let popover = this.popoverCtrl.create('HomePopoverPage');
+			popover.present({
+				ev: event
+			});
 		}
 	}
 
