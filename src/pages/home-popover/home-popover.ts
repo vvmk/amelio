@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, Events } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -8,14 +8,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HomePopoverPage {
 
-	constructor(public navCtrl: NavController, public navParams: NavParams) {
+	constructor(public navCtrl: NavController,
+		public navParams: NavParams,
+		public viewCtrl: ViewController,
+		public events: Events) {
 	}
 
 	showUserMetaPrefsPage() {
-		this.navCtrl.push('UserMetaPrefsPage');
+		this.events.publish('menu:accounts');
+		this.viewCtrl.dismiss();
 	}
 
 	showAccountsPage() {
-		this.navCtrl.push('AccountsPage');
+		this.events.publish('menu:prefs');
+		this.viewCtrl.dismiss();
 	}
 }

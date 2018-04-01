@@ -31,17 +31,17 @@ export class HomePage {
 
 		events.subscribe('user:loggedin', 
 			userLoginEventData => this.updateUserData(userLoginEventData));
+		events.subscribe('menu:accounts',
+			eventData => this.showAccountsPage());
+		events.subscribe('menu:prefs',
+			eventData => this.showUserMetaPrefsPage());
 	}
 
 	showMore(event): void {
-		if (this.user.email == '') {
-			this.showAccountsPage();
-		} else {
-			let popover = this.popoverCtrl.create('HomePopoverPage');
-			popover.present({
-				ev: event
-			});
-		}
+		let popover = this.popoverCtrl.create('HomePopoverPage');
+		popover.present({
+			ev: event
+		});
 	}
 
 	openShareModal(): void {
@@ -51,6 +51,10 @@ export class HomePage {
 
 	showAccountsPage(): void {
 		this.navCtrl.push('AccountsPage');
+	}
+
+	showUserMetaPrefsPage(): void {
+		this.navCtrl.push('UserMetaPrefsPage');
 	}
 
 	showLoginPage(): void {
