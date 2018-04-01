@@ -12,7 +12,7 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
-      statusBar.styleLightContent();
+    	statusBar.styleBlackTranslucent();
       splashScreen.hide();
     });
   }
