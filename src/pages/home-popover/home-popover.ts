@@ -11,11 +11,11 @@ export class HomePopoverPage {
 	constructor(public navCtrl: NavController, public navParams: NavParams) {
 	}
 
-	ionViewDidLoad() {
+	showUserMetaPrefsPage() {
+		this.navCtrl.push('UserMetaPrefsPage');
 	}
 
-	emitEvent(event) {
-		console.log(event);
+	showAccountsPage() {
+		this.navCtrl.push('AccountsPage');
 	}
-
 }
