@@ -1,0 +1,59 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar>
+    	<ion-title>Log-in</ion-title>
+	</ion-navbar>
+
+	<ion-toolbar no-border-top>
+		<ion-segment [(ngModel)]="method">
+			<ion-segment-button value="login">
+				Log in
+			</ion-segment-button>
+			<ion-segment-button value="register">
+				Register
+			</ion-segment-button>
+		</ion-segment>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div [ngSwitch]="method">
+		<div *ngSwitchCase="'login'">
+			<ion-item>
+				<ion-input type="text" placeholder="Email" 
+				[(ngModel)]="login.email"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input type="password" placeholder="Password"
+				[(ngModel)]="login.password"></ion-input>
+			</ion-item>
+		<button ion-button full (click)="submitLogin()">
+			Log in
+		</button>
+
+		</div>
+		<div *ngSwitchCase="'register'">
+			<ion-item>
+				<ion-input type="text" placeholder="Email"
+				[(ngModel)]="register.email"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input type="password" placeholder="Password"
+				[(ngModel)]="register.password"></ion-input>
+			</ion-item>
+			<ion-item>
+			<ion-input type="password" placeholder="Confirm"
+			[(ngModel)]="register.confirm"></ion-input>
+		</ion-item>
+		<button ion-button full (click)="submitCreateAccount()">
+			Sign up
+		</button>
+		</div>
+	</div>
+
+</ion-content>

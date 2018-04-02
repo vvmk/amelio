@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar>
   	<ion-buttons start>
   		<button ion-button icon-only color="royal" (click)="openShareModal()">
   			<ion-icon name="share"></ion-icon>
@@ -7,13 +7,20 @@
   	</ion-buttons>
   	<ion-title>Amelio</ion-title>
   	<ion-buttons end>
-  		<button ion-button icon-only color="royal" (click)="showAccountsPage()">
-  			<ion-icon name="add"></ion-icon>
+  		<button ion-button icon-only color="royal" (click)="showMore($event)">
+  			<ion-icon name="more"></ion-icon>
   		</button>
   	</ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  
+<ion-content>
+  <user-info-card [userData]="user"></user-info-card>
+
+  <!-- Temporary FABs to provide dev access to other pages -->
+  <ion-fab bottom right>
+    <button ion-button icon-only color="royal" (click)="showLoginPage()">
+      <ion-icon name="person"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>
