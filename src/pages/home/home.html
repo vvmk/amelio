@@ -17,6 +17,23 @@
 <ion-content>
   <user-info-card [userData]="user"></user-info-card>
 
+  <ion-list>
+    <ion-item *ngFor = "let message of messages">
+        <ion-card>
+
+            <ion-card-header>
+            {{message.header}}
+            </ion-card-header>
+            
+            <ion-card-content>
+              {{message.message}}
+            </ion-card-content>
+            
+            </ion-card>
+
+    </ion-item>
+  </ion-list>
+
   <!-- Temporary FABs to provide dev access to other pages -->
   <ion-fab bottom right>
     <button ion-button icon-only color="royal" (click)="showLoginPage()">

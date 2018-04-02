@@ -12,6 +12,13 @@ import { AccountModel } from '../../models/account-model';
 export class HomePage {
 	user: UserModel = new UserModel('error on platform.ready','error on platform.ready');
 
+	/*"declare a field variable called message of type string"
+	message: string = "hello";
+	*/
+
+	//"make an array of strings called messages"
+	messages: Card[] = [];
+
 	constructor(public navCtrl: NavController,
 		public popoverCtrl: PopoverController,
 		public events: Events,
@@ -35,6 +42,15 @@ export class HomePage {
 			eventData => this.showAccountsPage());
 		events.subscribe('menu:prefs',
 			eventData => this.showUserMetaPrefsPage());
+
+
+		//adding data (items) to our array
+
+		this.messages.push(new Card("Pluralsight", "Here is how many hours of PluralSight you have completed today:"));
+		this.messages.push(new Card("Codewars", "Look at all of the badges you earned in Codewars!"));
+		this.messages.push(new Card("Codeschool", "Here is your current learning path progress:"));
+
+		//this.messages.push("","test string info. have a nice day");
 	}
 
 	showMore(event): void {
@@ -65,5 +81,15 @@ export class HomePage {
 		// TODO: pass 'login' or 'registered' or 'data updated', handle accordingly
 		// 		instead of just creating a new object every time.
 		this.user = new UserModel(data.name, data.email);
+	}
+}
+
+class Card{
+	header:string;
+	message:string;
+
+	constructor(header:string, message:string){
+		this.header = header;
+		this.message = message;
 	}
 }
