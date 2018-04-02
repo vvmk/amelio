@@ -15,12 +15,12 @@ export class HomePopoverPage {
 	}
 
 	showUserMetaPrefsPage() {
-		this.events.publish('menu:accounts');
+		this.events.publish('menu:prefs');
 		this.viewCtrl.dismiss();
 	}
 
 	showAccountsPage() {
-		this.events.publish('menu:prefs');
+		this.events.publish('menu:accounts');
 		this.viewCtrl.dismiss();
 	}
 }
