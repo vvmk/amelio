@@ -19,7 +19,7 @@ export class AccountsPage {
   addAccount() {
   }
 
-  changeTileUponSuccessfulVerification() {
+  changeTile(id: string) {
 
   }
 

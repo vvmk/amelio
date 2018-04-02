@@ -6,15 +6,15 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <button ion-button block color="pluralsight" icon-left>
+  <button ion-button block color="pluralsight" (click)="changeTile(pluralsight)" icon-left id="pluralsight">
     <ion-icon name="md-code"></ion-icon>
     | &nbsp;&nbsp;&nbsp; Add PluralSight
   </button>
-  <button ion-button block color="codewars" icon-left>
+  <button ion-button block color="codewars" (click)="changeTile(codewars)" icon-left id="codewars">
     <ion-icon name="md-rose"></ion-icon>
     | &nbsp;&nbsp;&nbsp; Add CodeWars
   </button>
-  <button ion-button block color="codeschool" icon-left>
+  <button ion-button block color="codeschool" (click)="changeTile(codeschool)" icon-left id="codeschool">
     <ion-icon name="ios-school"></ion-icon>
     | &nbsp;&nbsp;&nbsp; Add CodeSchool
   </button>
