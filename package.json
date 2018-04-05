@@ -9,7 +9,8 @@
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ionic:serve": "ionic-app-scripts serve",
+    "test": "ng test"
   },
   "dependencies": {
     "@angular/animations": "5.2.9",
@@ -42,12 +43,30 @@
     "ionicons": "3.0.0",
     "promise-polyfill": "^7.1.1",
     "rxjs": "5.5.8",
-    "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.20"
+    "sw-toolbox": "3.6.0"
   },
   "devDependencies": {
+    "@angular/cli": "^1.7.3",
+    "@firebase/app": "^0.1.10",
+    "@firebase/app-types": "^0.1.2",
     "@ionic/app-scripts": "3.1.8",
-    "typescript": "~2.6.2"
+    "@types/jasmine": "^2.8.6",
+    "@types/node": "^9.6.1",
+    "codecov": "^3.0.0",
+    "jasmine-core": "^3.1.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jquery": "^3.3.1",
+    "karma": "^2.0.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-remap-istanbul": "^0.6.0",
+    "popper.js": "^1.14.1",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "tslint-eslint-rules": "^5.1.0",
+    "typescript": "~2.6.2",
+    "zone.js": "git://github.com/JiaLiPassion/zone.js#jasmine-dist"
   },
   "description": "An Ionic project",
   "cordova": {
